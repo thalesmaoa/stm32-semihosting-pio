@@ -1,0 +1,52 @@
+# --- PlatformIO ---
+.pio/
+.pioenvs/
+.piolibdeps/
+.platformio/
+
+# --- IDEs / Editores ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- STM32CubeMX (O que deve ser ignorado) ---
+# Ignoramos pastas de IDEs proprietárias geradas pelo CubeMX
+MDK-ARM/
+EWARM/
+TrueSTUDIO/
+
+# Arquivos temporários do CubeMX
+.mxproject
+/STM32CubeMX_Cache/
+
+# Drivers e Middlewares: 
+# Como você usa PlatformIO, geralmente não se comita a pasta "Drivers" 
+# e "Middlewares" gerada pelo CubeMX, pois o framework do PlatformIO 
+# já baixa as versões corretas. Mas se você modificou algo lá dentro, remova o # abaixo.
+# Drivers/
+# Middlewares/
+
+# --- Compilação C/C++ Geral ---
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.map
+*.d
+*.su
+
+# --- O QUE NÃO ESTÁ AQUI (E SERÁ COMITADO) ---
+# 1. O arquivo .ioc (MUITO IMPORTANTE - é sua configuração visual)
+# 2. A pasta src/ e include/
+# 3. O arquivo platformio.ini
+# --- Arquivos de Linker/Startup de outras IDEs (Inúteis para PlatformIO) ---
+*.icf
+*.s
+*.S
+*.ld 
+# Nota sobre *.ld: O PlatformIO usa o dele, mas as vezes o CubeMX gera um STM32...FLASH.ld 
+# que não usamos no Arduino Framework. Pode ignorar.
